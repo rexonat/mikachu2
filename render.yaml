@@ -1,0 +1,12 @@
+services:
+  - type: cron
+    name: royalmail-order-scraper
+    runtime: python
+    buildCommand: ./build.sh
+    startCommand: python fetch_orders.py
+    schedule: "0 6 * * *"  # Every day at 6am UTC
+    envVars:
+      - key: ROYALMAIL_EMAIL
+        sync: false
+      - key: ROYALMAIL_PASSWORD
+        sync: false
