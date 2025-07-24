@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
-# Install system dependencies and Playwright browsers
-playwright install --with-deps
+# Install browser binaries required by Playwright
+python -m playwright install --with-deps
